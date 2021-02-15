@@ -70,21 +70,17 @@ const Home = function(state) {
     `;
 };
 
-// listening for load event because page should load before any JS is called
 window.addEventListener('load', () => {
   render(root, store);
 });
 
-// listening for tab change
 window.addEventListener('hashchange', () => {
   render(root, store);
 });
 
 // ------------------------------------------------------  COMPONENTS
 
-// Example of a pure function that renders infomation requested from the backend
 const ImageOfTheDay = apod => {
-  // If image does not already exist, or it is not from today -- request it again
   const today = new Date();
   const photodate = new Date(apod.date);
   if (!apod || apod.date === today.getDate()) {
