@@ -63,7 +63,7 @@ const Home = function(state) {
         ${Header(state)}
         <main>            
             <section>
-                <h3>Picture of the Day</h3>                
+                <h3 class=txtImgOfTheDay> Image of the Day </h3>                
                 ${ImageOfTheDay(apod) || ''}
             </section>            
         </main>
@@ -91,20 +91,10 @@ const ImageOfTheDay = apod => {
     getImageOfTheDay(store);
     return ``;
   }
-
-  // check if the photo of the day is actually type video!
-  if (apod.media_type === 'video') {
     return `
-            <p>See today's featured video <a href="${apod.url}">here</a></p>
-            <p>${apod.title}</p>
-            <p>${apod.explanation}</p>
-        `;
-  } else {
-    return `
-            <img src="${apod.get('image').get('url')}" width="100%" />
+            <img class='imgOfTheDay' src="${apod.get('image').get('url')}" width="100%" />
             <p>${apod.get('image').get('explanation')}</p>
         `;
-  }
 };
 
 const RoverGallery = (state, roverName) => {

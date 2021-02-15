@@ -46,6 +46,17 @@ main {
   background: rgba(0,0,0,0.5);
   color: white;
 }
+.txtImgOfTheDay{
+text-align: center;
+}
+
+.imgOfTheDay{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40vh;
+  width: 40vw;
+}
 
 .imgThumbnail {
   height: 400px;
